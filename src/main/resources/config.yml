@@ -1,0 +1,14 @@
+# Tips - Simple queued messaging system for Bukkit.
+# Written by Taylor Blau (2014)
+
+tip-delay: 100
+
+formatters:
+  default:
+    prefix: "`7`o[`b`l`oTip`7`o] `r"
+    format: "%message"
+
+tips:
+  "Test tip!":
+    recieve-permission: "tips.recieve.foo"
+    formatter: default
