@@ -28,7 +28,7 @@ public class Tip {
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (canPlayerListen(p)) {
-                p.sendMessage(formatted.replace("%player", p.getName()).replace("%name", p.getDisplayName()));
+                p.sendMessage(formatMessage(p, formatted));
             }
         }
     }
@@ -38,7 +38,7 @@ public class Tip {
 
         for (Player player : players) {
             if (this.canPlayerListen(player)) {
-                player.sendMessage(formatted.replace("%player", player.getName()).replace("%name", player.getDisplayName()));
+                p.sendMessage(formatMessage(player, formatted));
             }
         }
     }
@@ -69,6 +69,12 @@ public class Tip {
 
     public @Nullable String getRecievePermission() {
         return recievePermission;
+    }
+
+    private @Nonnull String formatMessage(Player player, String message) {
+        return message
+                .replace("%player", p.getName())
+                .replace("%name", p.getDisplayName());
     }
 
 }
