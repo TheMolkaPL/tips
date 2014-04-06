@@ -28,7 +28,7 @@ public class Tip {
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (canPlayerListen(p)) {
-                p.sendMessage(formatted);
+                p.sendMessage(formatted.replace("%player", p.getName()).replace("%name", p.getDisplayName()));
             }
         }
     }
@@ -38,7 +38,7 @@ public class Tip {
 
         for (Player player : players) {
             if (this.canPlayerListen(player)) {
-                player.sendMessage(formatted);
+                player.sendMessage(formatted.replace("%player", player.getName()).replace("%name", player.getDisplayName()));
             }
         }
     }
